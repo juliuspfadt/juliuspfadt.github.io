@@ -5,7 +5,7 @@
 layout: page
 ---
 
-<img style="float: right;" src="/assets/images/me_colour.png" width="150">
+<img style="float: right;" src="/assets/images/me_bw.png" width="150">
 
 ### About
 Something about me
