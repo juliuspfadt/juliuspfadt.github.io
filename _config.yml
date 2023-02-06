@@ -18,6 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
+author: Julius Pfadt
 title: Julius M. Pfadt
 email: julius.pfadt@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
@@ -26,11 +27,15 @@ description: >- # this means to ignore newlines until "baseurl:"
 # url: "" # the base hostname & protocol for your site, e.g. http://example.com
 linkedin_username: julius-pfadt-8b8a45179
 github_username:  juliuspfadt
+orcid: 0000-0002-0758-5502
 
 # Build settings
 theme: minima
-plugins:
-  - jekyll-feed
+feed:
+   tags: true
+
+  # Google Analytics
+google_analytics: G-NCG60VZ1HG
 
 # Exclude from processing.
 # The following items will not be processed, by default.
