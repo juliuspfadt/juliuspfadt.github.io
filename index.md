@@ -2,6 +2,7 @@
 
 layout: page
 ---
+{% seo %}
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-NCG60VZ1HG"></script>
 <script>
