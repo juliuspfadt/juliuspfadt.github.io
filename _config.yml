@@ -21,10 +21,9 @@
 author: Julius Pfadt
 title: Julius M. Pfadt
 description: >- # this means to ignore newlines until "baseurl:"
-  This site contains my bio, cv, and projects.
+
 # baseurl: "" # the subpath of your site, e.g. /blog
 # url: "" # the base hostname & protocol for your site, e.g. 
-url: https://juliuspfadt.com
 # linkedin_username: julius-pfadt-8b8a45179
 # github_username:  juliuspfadt
 # orcid: 0000-0002-0758-5502
