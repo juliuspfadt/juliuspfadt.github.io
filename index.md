@@ -1,6 +1,6 @@
 ---
 
-layout: page
+layout: home
 ---
 {% seo %}
 <!-- Google tag (gtag.js) -->
@@ -13,10 +13,11 @@ layout: page
   gtag('config', 'G-NCG60VZ1HG');
 </script>
 
-<img style="float: right;" src="/assets/images/me_col.png" width="150">
+<img style="float: right;" src="/assets/images/me_bw.png" width="150">
 
-### About
-Well, I guess everyone can make their own website now. Nothing much to see here, except all my professional output. 
-Sometime in the future, this site may also contain some of my non-work related adventures. Let's see. 
+# About
+Hello. As this seems to be a thing for young researchers, I made this website. It is supposed to portray most of my professional output. I am a PhD candidate in psychological research methods at Ulm University; hopefully soon-to-be (March 14th) Doctor of Natural Sciences (Dr. rer. nat.). 
+
+Sometime in the future, the site may also contain some of my non-work related adventures. We'll see. 
 
 
