@@ -26,6 +26,11 @@ permalink: /publications
 - A Bayesian Spectacles blog post presenting the preprint of "Bayesian estimation of single-test reliability coefficients". [https://www.bayesianspectacles.org/preprint-bayesian-estimation-of-single-test-reliability-coefficients/](https://www.bayesianspectacles.org/preprint-bayesian-estimation-of-single-test-reliability-coefficients/)
 
 ### Talks
+#### 2023
+- Presentation at my PhD defense (online)
+<a style="color:#5A5A5A;" href="assets/pdfs/Defense_Presentation.pdf">download</a>
+<iframe src="assets/pdfs/Defense_Presentation.pdf" style="width: 30%;height: 30%;border: none;"></iframe>
+
 #### 2021 
 - Presentation (virtual) at the International Meeting of the Psychometric Society 2021, presenting work on Bayesian Multidimensional Reliability.
 <a style="color:#5A5A5A;" href="assets/pdfs/BayesianMultiReliability.pdf">download</a>
