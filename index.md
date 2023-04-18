@@ -18,8 +18,13 @@ layout: home
 # About
 Hello. 
 
-This site is supposed to portray most of my professional output. I am a PhD candidate in psychological research methods at Ulm University. Having successfully defended my thesis with distinction on March 14th, 2023, I will soon be able to call myself Doctor of Natural Sciences (Dr. rer. nat.). 
+I am a PhD candidate in psychological research methods at Ulm University. I successfully defended my thesis with distinction (summa cum laude) on March 14th, 2023. 
 
-Sometime in the future, the site may also contain some of my non-work related adventures. We'll see. 
+My professional interest lies with statistical modeling: in particular, developing methods to help researchers learn about unobservable patterns in their data. These methods are ideally, but not exclusively, Bayesian. So far, I have mainly focused on methods for psychometrics, specifically, reliability estimation and structural equation modeling. 
 
+I strongly believe that science should be free and accessible to everyone. Thus, I aim to publish open-access and implement all methods in free and open-source software, i.e., R and JASP. 
+
+
+
+<font size="2"> Sometime in the future, this site may also contain some of my non-work related adventures. We'll see.  </font>
 
