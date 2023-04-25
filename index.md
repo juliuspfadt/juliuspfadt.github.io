@@ -1,6 +1,8 @@
 ---
 
 layout: home
+image: 
+  background: /assets/images/background.jpeg
 ---
 {% seo %}
 <!-- Google tag (gtag.js) -->
@@ -22,8 +24,7 @@ I am a PhD candidate in psychological research methods at Ulm University. I succ
 
 My professional interest lies with statistical modeling: in particular, developing methods to help researchers learn about unobservable patterns in their data. These methods are ideally, but not exclusively, Bayesian. So far, I have mainly focused on methods for psychometrics, specifically, reliability estimation and structural equation modeling. 
 
-I strongly believe that science should be free and accessible to everyone. Thus, I aim to publish open-access and implement all methods in free and open-source software, i.e., R and JASP. 
-
+I strongly believe that science should be accessible to everyone. Thus, I try to publish open-access whenever possible and implement all methods I develop in free and open-source software, i.e., R and JASP. 
 
 
 <font size="2"> Sometime in the future, this site may also contain some of my non-work related adventures. We'll see.  </font>
