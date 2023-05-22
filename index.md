@@ -1,8 +1,7 @@
 ---
 
 layout: home
-image: 
-  background: /assets/images/background.jpeg
+
 ---
 {% seo %}
 <!-- Google tag (gtag.js) -->
