@@ -19,7 +19,8 @@ layout: home
 # About
 Hello. 
 
-I am a PhD candidate in psychological research methods at Ulm University. I successfully defended my thesis with distinction (summa cum laude) on March 14th, 2023. 
+I am a researcher in psychological research methods at Ulm University. 
+I recently received my PhD with distinction (summa cum laude) for my thesis titled "The Present and Future of Reliability Analysis: Advances in Theory and Practice".
 
 My professional interest lies with statistical modeling: in particular, developing methods to help researchers learn about unobservable patterns in their data. These methods are ideally, but not exclusively, Bayesian. So far, I have mainly focused on methods for psychometrics, specifically, reliability estimation and structural equation modeling. 
 
