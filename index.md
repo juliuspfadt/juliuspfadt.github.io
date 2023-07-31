@@ -21,7 +21,7 @@ Hello.
 
 I am currently working as a postdoctoral researcher at the Department of Methodology and Statistics at Tilburg University with Joris Mulder on dynamic social networking. I am implementing relational event modeling methods in JASP (and a little bit in R). 
 
-I recently received my PhD with distinction (summa cum laude) for my thesis titled "The Present and Future of Reliability Analysis: Advances in Theory and Practice". 
+I recently received my PhD with distinction (summa cum laude) for my thesis titled "The Present and Future of Reliability Analysis: Advances in Theory and Practice ([*download*](https://oparu.uni-ulm.de/xmlui/handle/123456789/49776)). 
 
 <!-- Soon-ish, I will start working on Bayesian model averaging for structural equation models with Eric-Jan Wagenmakers at the University of Amsterdam funded by a Walter-Benjamin-Grant from the German Research Foundation. -->
 

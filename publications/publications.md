@@ -5,9 +5,12 @@ permalink: /publications
 ---
 ### Scientific
 #### 2023
-- **Pfadt, J. M.**, van den Bergh, D., & Moshagen, M. (in press). Classical and Bayesian uncertainty intervals for the reliability of multidimensional scales. *Structural Equation Modeling: A Multidisciplinary Journal, 30*(3), 349–363. [https://doi.org/10.1080/10705511.2022.2124162](https://doi.org/10.1080/10705511.2022.2124162)
+- **Pfadt, J. M.** (2023), *The present and future of reliability analyis: Advances in theory and practice* [Doctoral dissertation, Ulm University]. [http://dx.doi.org/10.18725/OPARU-49700](https://doi.org/10.18725/OPARU-49700)
+
+- **Pfadt, J. M.**, van den Bergh, D., & Moshagen, M. (2023). Classical and Bayesian uncertainty intervals for the reliability of multidimensional scales. *Structural Equation Modeling: A Multidisciplinary Journal, 30*(3), 349–363. [https://doi.org/10.1080/10705511.2022.2124162](https://doi.org/10.1080/10705511.2022.2124162)
 
 - Sijtsma, K., & **Pfadt, J. M.** (2023). Reliability. In R. Tierney, F. Rizvi, & K. Ercikan (Eds.), *International encyclopedia of education* (4th ed., pp. 21–34). Elsevier. [https://doi.org/10.1016/B978-0-12-818630-5.10004-1](https://doi.org/10.1016/B978-0-12-818630-5.10004-1)
+
 
 #### 2022
 - **Pfadt, J. M.**, & Sijtsma, K. (2022). Statistical properties of lower bounds and factor analysis methods for reliability estimation. In M. Wiberg, D. Molenaar, J. González, J.-S. Kim, & H. Hwang (Eds.), *Quantitative psychology: The 86th Annual Meeting of the Psychometric Society, virtual, 2021* (pp. 51–63). Springer International Publishing. [https://doi.org/10.1007/978-3-031-04572-1_5](https://doi.org/10.1007/978-3-031-04572-1_5)
