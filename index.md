@@ -20,15 +20,15 @@ layout: home
 Hello. 
 
 
-Currently, I am working as a postdoctoral researcher at the Department of Methodology and Statistics at Tilburg University with Joris Mulder on dynamic social networking. I am implementing relational event modeling methods in JASP (and a little bit in R). 
+I am a postdoctoral researcher currently working with Joris Mulder on relational event modeling at the Department of Methodology and Statistics at Tilburg University.
 
-I am pleased to announce that I will soon start working on Bayesian model averaging for structural equation models with Eric-Jan Wagenmakers at the University of Amsterdam funded by a Walter-Benjamin-Grant from the German Research Foundation. In addition, I will be collaborating with Quentin F. Gronau (University of Newcastle, AU), Ihnwhi Heo (University of California, Merced), and Morten Moshagen (Ulm University).
+I am pleased to share that I will soon start working on Bayesian model averaging for structural equation models alongside Eric-Jan Wagenmakers at the University of Amsterdam. This opportunity is made possible by a Walter-Benjamin-Grant from the German Research Foundation. My collaborators include Quentin F. Gronau (University of Newcastle, AU), Ihnwhi Heo (University of California, Merced), and Morten Moshagen (Ulm University).
 
-I recently received my PhD with distinction (summa cum laude) for my thesis titled "The Present and Future of Reliability Analysis: Advances in Theory and Practice ([*download*](https://oparu.uni-ulm.de/xmlui/handle/123456789/49776)). 
+I recently received my PhD with distinction (summa cum laude) for my thesis titled "The Present and Future of Reliability Analysis: Advances in Theory and Practice". You can download the thesis [*here*](https://oparu.uni-ulm.de/xmlui/handle/123456789/49776). 
 
-My professional interest lies with statistical modeling: in particular, developing methods to help researchers learn about unobservable patterns in their data. These methods are ideally, but not exclusively, Bayesian. So far, in my publications, I have mainly focused on methods for psychometrics, specifically, reliability estimation and structural equation modeling. 
+My professional interest lies with statistical modeling: in particular, developing methods to help researchers learn about unobservable patterns in their data. These methods are ideally, but not exclusively, Bayesian. My published work has predominantly concentrated on psychometrics, particularly reliability estimation and structural equation modeling.
 
-I strongly believe that science should be accessible to everyone. Therefore, I try to publish open-access whenever possible and implement all methods I develop in free and open-source software, i.e., R and JASP. 
+I strongly believe that science should be accessible to everyone. To that end, I strive to publish open-access content whenever possible, and I ensure that the methods I develop are implemented in free and open-source software platforms, such as R and JASP. 
 
 
 <font size="2"> Sometime in the future, this site may also contain some of my non-work related adventures. We'll see.  </font>
