@@ -30,16 +30,20 @@ permalink: /publications
 
 ### Talks
 #### 2023
-- Presentation at my PhD defense (online)
-<a style="color:#5A5A5A;" href="assets/pdfs/Defense_Presentation.pdf">download</a>
-<iframe src="assets/pdfs/Defense_Presentation.pdf" style="width: 30%;height: 30%;border: none;"></iframe>
+- Presentation (online) on Bayesian statistics for the Research Section of the Forensic Psychiatry in Guenzburg, Germany.
+<a style="color:#5A5A5A;" href="assets/pdfs/GuenzburgPres_final_noPictures.pdf">download</a>
+<iframe src="assets/pdfs/GuenzburgPres_final_noPictures.pdf" style="width: 30%;height: 30%;border: none;"></iframe>
+
+- Presentation (online) at my PhD defense.
+<a style="color:#5A5A5A;" href="assets/pdfs/Defense_presentation.pdf">download</a>
+<iframe src="assets/pdfs/Defense_presentation.pdf" style="width: 30%;height: 30%;border: none;"></iframe>
 
 #### 2021 
-- Presentation (virtual) at the International Meeting of the Psychometric Society 2021, presenting work on Bayesian Multidimensional Reliability.
+- Presentation (online) at the International Meeting of the Psychometric Society 2021, presenting work on Bayesian Multidimensional Reliability.
 <a style="color:#5A5A5A;" href="assets/pdfs/BayesianMultiReliability.pdf">download</a>
 <iframe src="assets/pdfs/BayesianMultiReliability.pdf" style="width: 30%;height: 30%;border: none;"></iframe>
 
-- Presentation of my dissertation topic to the Institute of Psychology and Education at Ulm University.
+- Presentation of my PhD topic to the Institute of Psychology and Education at Ulm University.
 <a style="color:#5A5A5A;" href="assets/pdfs/Diss_Presentation.pdf">download</a>
 <iframe src="assets/pdfs/Diss_Presentation.pdf" style="width: 30%;height: 30%;border: none;"></iframe>
 
