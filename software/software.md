@@ -12,7 +12,9 @@ https://www.r-project.org
 
 ### JASP
 [https://jasp-stats.org](https://jasp-stats.org)
-- **Reliability module** (author, maintainer): \
-[https://github.com/jasp-stats/jaspReliability](https://github.com/jasp-stats/jaspReliability)
 - **Factor module** (maintainer): \
 [https://github.com/jasp-stats/jaspFactor](https://github.com/jasp-stats/jaspFactor)
+- **Reliability module** (author, maintainer): \
+[https://github.com/jasp-stats/jaspReliability](https://github.com/jasp-stats/jaspReliability)
+- **SEM module** (maintainer): \
+[https://github.com/jasp-stats/jaspSem](https://github.com/jasp-stats/jaspSem)
