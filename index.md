@@ -21,7 +21,7 @@ Hello.
 
 I am a postdoctoral researcher currently working on Bayesian model averaging for structural equation models alongside Eric-Jan Wagenmakers at the University of Amsterdam. The position is funded by a Walter-Benjamin-Fellowship from the German Research Foundation (DFG).
 
-My professional interest lies with statistical modeling: in particular, developing methods to help researchers learn about unobservable patterns in their data. These methods are ideally, but not exclusively, Bayesian. So far, my published work has mainly concentrated on psychometrics, particularly reliability estimation and structural equation modeling.
+My professional interest lies with statistical modeling: in particular, developing methods to help researchers learn about patterns in their data. These methods are ideally, but not exclusively, Bayesian. In my published work, I have mainly focused on psychometrics, particularly reliability estimation and structural equation modeling.
 
 I strongly believe that science should be accessible to everyone. To that end, I strive to publish open-access content whenever possible, and I ensure that the methods I develop are implemented in free and open-source software platforms, such as R and JASP. 
 
