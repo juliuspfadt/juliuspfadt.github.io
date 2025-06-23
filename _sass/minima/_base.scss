@@ -255,3 +255,13 @@ table {
   }
 }
 
+body.homepage .site-header {
+  // background-color: #123456; // ← your desired homepage-only header color
+  color: #e0e0e0;              // optional
+}
+body.homepage .site-title {
+  color: #e0e0e0;
+}
+body.homepage .site-nav a {
+  color: #e0e0e0;
+}
