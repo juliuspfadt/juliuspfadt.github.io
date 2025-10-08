@@ -23,6 +23,8 @@ I am a postdoctoral researcher currently working on Bayesian model averaging for
 
 My professional interest lies with statistical modeling: in particular, developing methods to help researchers learn about patterns in their data. These methods are ideally, but not exclusively, Bayesian. In my published work, I have mainly focused on psychometrics, particularly reliability estimation and structural equation modeling.
 
+In addition to my research, I develop open-source tools for statistics, including modules for JASP (BFpack, Factor, Reliability, SEM) and the R package Bayesrel. I am also a co-founder of [JASP Services BV](https://jasp-services.com).
+
 I strongly believe that science should be accessible to everyone. To that end, I strive to publish open-access content whenever possible, and I ensure that the methods I develop are implemented in free and open-source software platforms, such as R and JASP. 
 
 
