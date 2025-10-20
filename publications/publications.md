@@ -6,7 +6,7 @@ permalink: /publications
 ### Scientific
 #### 2025
 - **Pfadt, J. M.**, Molenaar, D., Hurks, P., & Sijtsma, K. (2025). *A tutorial on estimating the precision of individual test scores*. PsyArXiv. [https://doi.org/10.31234/osf.io/a27g4_v1](https://doi.org/10.31234/osf.io/a27g4_v1)
-- Mulder, J., **Pfadt, J. M.**, & Wagenmakers, E.-J. (2025). *A tutorial on Bayesian hypothesis testing of correlation coeﬃcients using the BFpack-module in JASP*. PsyArXiv. [https://doi.org/10.31234/osf.io/e9zw2_v2](https://doi.org/10.31234/osf.io/e9zw2_v2)
+- Mulder, J., **Pfadt, J. M.**, & Wagenmakers, E. -J. (2025). A tutorial on Bayesian hypothesis testing of correlation coefficients using the BFpack-module in JASP. *Behavior Research Methods, 57*(11), 311. https://doi.org/10.3758/s13428-025-02846-5
 
 #### 2023
 - **Pfadt, J. M.** (2023), *The present and future of reliability analyis: Advances in theory and practice* [Doctoral dissertation, Ulm University]. [http://dx.doi.org/10.18725/OPARU-49700](https://doi.org/10.18725/OPARU-49700)
