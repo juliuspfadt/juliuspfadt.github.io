@@ -5,6 +5,7 @@ permalink: /publications
 ---
 ### Scientific
 #### 2025
+- **Pfadt, J. M.**, Barto ˇs, F., Godmann, H. R., Waaijers, M., Groot, L., Heo, I., Mensink,L., Nak, J., De Ruiter, J. P., Sarafoglou, A., Siepe, B. S., Arena, G., Akrong, E., Aust, F., van Den Bergh, D., Brenner, W., Doekemeijer, R. A., Donzallaz, M. C., van Doorn, J., . . . Wagenmakers, E. - J. (2025). *A methodological metamorphosis: The rapid rise of Bayesian inference and open science practices in psychology*. https://doi.org/10.31234/osf.io/ck3js v1
 - **Pfadt, J. M.**, Molenaar, D., Hurks, P., & Sijtsma, K. (2025). *A tutorial on estimating the precision of individual test scores*. PsyArXiv. [https://doi.org/10.31234/osf.io/a27g4_v1](https://doi.org/10.31234/osf.io/a27g4_v1)
 - Mulder, J., **Pfadt, J. M.**, & Wagenmakers, E. -J. (2025). A tutorial on Bayesian hypothesis testing of correlation coefficients using the BFpack-module in JASP. *Behavior Research Methods, 57*(11), 311. https://doi.org/10.3758/s13428-025-02846-5
 
