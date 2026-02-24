@@ -4,10 +4,14 @@ title:  "Publications"
 permalink: /publications
 ---
 ### Scientific
+#### 2026
+- **Pfadt, J. M.**, Molenaar, D., Hurks, P., & Sijtsma, K. (2026). A tutorial on estimating the precision of individual test scores for anyone constructing and using psychological tests. *Psychometrika*. [https://doi.org/10.1017/psy.2026.10081](https://doi.org/10.1017/psy.2026.10081)
+
 #### 2025
-- **Pfadt, J. M.**, Barto ˇs, F., Godmann, H. R., Waaijers, M., Groot, L., Heo, I., Mensink,L., Nak, J., De Ruiter, J. P., Sarafoglou, A., Siepe, B. S., Arena, G., Akrong, E., Aust, F., van Den Bergh, D., Brenner, W., Doekemeijer, R. A., Donzallaz, M. C., van Doorn, J., . . . Wagenmakers, E. - J. (2025). *A methodological metamorphosis: The rapid rise of Bayesian inference and open science practices in psychology*. https://doi.org/10.31234/osf.io/ck3js v1
-- **Pfadt, J. M.**, Molenaar, D., Hurks, P., & Sijtsma, K. (2025). *A tutorial on estimating the precision of individual test scores*. PsyArXiv. [https://doi.org/10.31234/osf.io/a27g4_v1](https://doi.org/10.31234/osf.io/a27g4_v1)
-- Mulder, J., **Pfadt, J. M.**, & Wagenmakers, E. -J. (2025). A tutorial on Bayesian hypothesis testing of correlation coefficients using the BFpack-module in JASP. *Behavior Research Methods, 57*(11), 311. https://doi.org/10.3758/s13428-025-02846-5
+- **Pfadt, J. M.**, Bartoš, F., Godmann, H. R., Waaijers, M., Groot, L., Heo, I., Mensink, L., Nak, J., De Ruiter, J. P., Sarafoglou, A., Siepe, B. S., Arena, G., Akrong, E., Aust, F., van den Bergh, D., Brenner, W., Doekemeijer, R. A., Donzallaz, M. C., van Doorn, J., . . . Wagenmakers, E.-J. (2025). *A methodological metamorphosis: The rapid rise of Bayesian inference and open science practices in psychology*. PsyArXiv. [https://doi.org/10.31234/osf.io/ck3js_v1](https://doi.org/10.31234/osf.io/ck3js_v1)
+- Mulder, J., & **Pfadt, J. M.** (2025). *Going in the right direction: A tutorial to directional hypothesis testing using the BFpack module in JASP*. PsyArXiv. [https://doi.org/10.31234/osf.io/f582h_v1](https://doi.org/10.31234/osf.io/f582h_v1)
+- Godmann, H. R., Molenaar, D., Ziegler, M., & **Pfadt, J. M.** (2025). *A tutorial on assessing measurement invariance with moderated (non-)linear factor analysis in JASP*. PsyArXiv. [https://doi.org/10.31234/osf.io/6ftqg_v1](https://doi.org/10.31234/osf.io/6ftqg_v1)
+- Mulder, J., **Pfadt, J. M.**, & Wagenmakers, E.-J. (2025). A tutorial on Bayesian hypothesis testing of correlation coefficients using the BFpack-module in JASP. *Behavior Research Methods, 57*(11), 311. [https://doi.org/10.3758/s13428-025-02846-5](https://doi.org/10.3758/s13428-025-02846-5)
 
 #### 2023
 - **Pfadt, J. M.** (2023), *The present and future of reliability analyis: Advances in theory and practice* [Doctoral dissertation, Ulm University]. [http://dx.doi.org/10.18725/OPARU-49700](https://doi.org/10.18725/OPARU-49700)

@@ -19,9 +19,9 @@ layout: home
 Hello. 
 
 
-I am a postdoctoral researcher currently working on Bayesian model averaging for structural equation models alongside Eric-Jan Wagenmakers at the University of Amsterdam. The position is funded by a Walter-Benjamin-Fellowship from the German Research Foundation (DFG).
+I am a postdoctoral researcher at the University of Amsterdam, currently working on the ERC-project "Coherent Hypothesis Tests for Experimental Research" alongside Eric-Jan Wagenmakers. Previously, I worked on Bayesian structural equation modeling funded by a Walter-Benjamin-Fellowship from the German Research Foundation (DFG).
 
-My professional interest lies with statistical modeling: in particular, developing methods to help researchers learn about patterns in their data. These methods are ideally, but not exclusively, Bayesian. In my published work, I have mainly focused on psychometrics, particularly reliability estimation and structural equation modeling.
+My professional interest lies with statistical modeling: in particular, developing methods to help researchers learn about patterns in their data. These methods are ideally, but not exclusively, Bayesian. In my published work, I mainly focus on psychometrics, particularly reliability estimation and structural equation modeling.
 
 In addition to my research, I develop open-source tools for statistics, including modules for [JASP](https://jasp-stats.org) (BFpack, Factor, Reliability, SEM) and the R package Bayesrel. I am also a co-founder of [JASP Services BV](https://jasp-services.com).
 
