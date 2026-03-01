@@ -8,8 +8,6 @@ permalink: /software
 Packages:
 - **Bayesrel**: \
 Pfadt, J. M., van den Bergh, D., & Goosen, J. (2022). Bayesrel: Bayesian reliability estimation (Version 0.7.5) [R-package]. CRAN. [https://CRAN.r-project.org/package=Bayesrel](https://CRAN.r-project.org/package=Bayesrel)
-https://www.r-project.org
-[https://github.com/juliuspfadt/Bayesrel](https://github.com/juliuspfadt/Bayesrel)
 
 ### JASP
 [https://jasp-stats.org](https://jasp-stats.org)

@@ -19,7 +19,7 @@ layout: home
 Hello. 
 
 
-I am a postdoctoral researcher at the University of Amsterdam, currently working on the ERC-project "Coherent Hypothesis Tests for Experimental Research" alongside Eric-Jan Wagenmakers. Previously, I worked on Bayesian structural equation modeling funded by a Walter-Benjamin-Fellowship from the German Research Foundation (DFG).
+I am a postdoctoral researcher at the University of Amsterdam, currently working on the ERC-project "Coherent Hypothesis Tests for Experimental Research" with Eric-Jan Wagenmakers. Before that, I worked on Bayesian structural equation modeling funded by a Walter-Benjamin-Fellowship from the German Research Foundation (DFG).
 
 My professional interest lies with statistical modeling: in particular, developing methods to help researchers learn about patterns in their data. These methods are ideally, but not exclusively, Bayesian. In my published work, I mainly focus on psychometrics, particularly reliability estimation and structural equation modeling.
 

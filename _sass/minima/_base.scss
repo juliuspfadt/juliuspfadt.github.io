@@ -106,7 +106,7 @@ h1, h2, h3, h4, h5, h6 {
  */
 a {
   color: $brand-color;
-  text-decoration: none;
+  text-decoration: underline;
 
   &:visited {
     color: darken($brand-color, 15%);
@@ -131,7 +131,7 @@ a {
  * Blockquotes
  */
 blockquote {
-  color: $grey-color;
+  color: $text-color;
   border-left: 4px solid $grey-color-light;
   padding-left: $spacing-unit / 2;
   @include relative-font-size(1.125);
@@ -214,7 +214,7 @@ pre {
     width: 16px;
     height: 16px;
     display: inline-block;
-    fill: #{$grey-color};
+    fill: $text-color;
     padding-right: 5px;
     vertical-align: text-top;
 }
@@ -234,7 +234,7 @@ table {
   margin-bottom: $spacing-unit;
   width: 100%;
   text-align: $table-text-align;
-  color: lighten($text-color, 18%);
+  color: $text-color;
   border-collapse: collapse;
   border: 1px solid $grey-color-light;
   tr {
