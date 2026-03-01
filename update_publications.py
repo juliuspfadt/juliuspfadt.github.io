@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
-Fetch publications from ORCID and generate the Scientific section of publications.md.
+Fetch publications from ORCID and generate publications.html.
 
 Usage:
     python3 update_publications.py          # preview to stdout
-    python3 update_publications.py --write  # overwrite publications/publications.md
+    python3 update_publications.py --write  # overwrite publications.html
 
 The script:
   1. Pulls all works from the ORCID API.
@@ -12,13 +12,12 @@ The script:
      articles over preprints and latest versions over older ones.
   3. Fetches detailed metadata (authors, journal, DOI) for each selected work.
   4. Renders APA-style entries grouped by year.
-  5. Preserves the Blog posts section at the bottom of publications.md.
+  5. Preserves the Blog posts section at the bottom of publications.html.
 """
 
 import json
 import re
 import sys
-import textwrap
 import urllib.request
 from collections import defaultdict
 
@@ -26,30 +25,105 @@ ORCID_ID = "0000-0002-0758-5502"
 ORCID_API = f"https://pub.orcid.org/v3.0/{ORCID_ID}"
 BOLD_NAME = "Pfadt, J. M."
 MAX_AUTHORS_BEFORE_ELLIPSIS = 20
-PUBLICATIONS_MD = "publications/publications.md"
+PUBLICATIONS_FILE = "publications.html"
 
 # Work types considered "published" (preferred over preprints)
 PUBLISHED_TYPES = {"journal-article", "book-chapter", "book", "edited-book",
                    "dissertation-thesis", "conference-paper"}
 
-# ── Front matter and blog section kept verbatim ──────────────────────────────
-FRONT_MATTER = textwrap.dedent("""\
-    ---
-    layout: page
-    title:  "Publications"
-    permalink: /publications
-    ---
-""")
+# ── HTML shell ────────────────────────────────────────────────────────────────
+HTML_TOP = """\
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Publications | Julius M. Pfadt</title>
+  <link rel="stylesheet" href="/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=PT+Serif&amp;family=Roboto&amp;family=Roboto+Slab&amp;family=STIX+Two+Text&amp;display=swap" rel="stylesheet">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NCG60VZ1HG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NCG60VZ1HG');
+  </script>
+</head>
+<body>
 
-BLOG_POSTS_SECTION = textwrap.dedent("""\
-    ### Blog posts
-    #### 2021
-    - A Bayesian Spectacles blog post presenting the preprint of \
-"Bayesian estimation of single-test reliability coefficients". \
-[https://www.bayesianspectacles.org/preprint-bayesian-estimation-of-single-test-\
-reliability-coefficients/](https://www.bayesianspectacles.org/preprint-bayesian-\
-estimation-of-single-test-reliability-coefficients/)
-""")
+  <header class="site-header" role="banner">
+    <div class="wrapper">
+      <a class="site-title" rel="author" href="/">Julius M. Pfadt</a>
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+        <div class="trigger">
+          <a class="page-link" href="/publications.html">Publications</a>
+          <a class="page-link" href="/software.html">Software</a>
+          <a class="page-link" href="/talks.html">Talks</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-content" aria-label="Content">
+    <div class="wrapper">
+      <article class="post">
+        <header class="post-header">
+          <h1 class="post-title">Publications</h1>
+        </header>
+        <div class="post-content">
+          <h3>Scientific</h3>
+"""
+
+HTML_BOTTOM = """\
+
+          <h3>Blog posts</h3>
+
+          <h4>2021</h4>
+          <ul>
+            <li>A Bayesian Spectacles blog post presenting the preprint of &ldquo;Bayesian estimation of single-test reliability coefficients&rdquo;. <a href="https://www.bayesianspectacles.org/preprint-bayesian-estimation-of-single-test-reliability-coefficients/">https://www.bayesianspectacles.org/preprint-bayesian-estimation-of-single-test-reliability-coefficients/</a></li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer h-card">
+    <div class="wrapper">
+      <div class="footer-col-wrapper">
+        <div class="footer-col footer-col-1">
+          <ul class="contact-list">
+            <li class="p-name">
+              <p style="color:#000000;"><b>julius.pfadt at gmail.com</b></p>
+              <p style="color:#000000; line-height:0">last edit Mar 1, 2026</p>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-col footer-col-2">
+          <ul class="social-media-list">
+            <li><a href="https://github.com/juliuspfadt"><img alt="Github" src="/assets/images/github-mark.png" width="24" height="24"></a></li>
+            <li><a href="https://www.linkedin.com/in/julius-m-pfadt-8b8a45179"><img alt="LinkedIn" src="/assets/images/linkedin-logo.png" width="24" height="24"></a></li>
+            <li><a href="https://orcid.org/0000-0002-0758-5502"><img alt="ORCID" src="/assets/images/orcid.png" width="24" height="24"></a></li>
+            <li><a href="https://scholar.google.com/citations?user=Db1-WloAAAAJ&amp;hl=en"><img alt="Google Scholar" src="/assets/images/google-scholar_icon.png" width="24" height="24"></a></li>
+            <li><a href="https://www.researchgate.net/profile/Julius-Pfadt"><img alt="ResearchGate" src="/assets/images/researchgate.png" width="24" height="24"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
+"""
 
 # ── Manual entries NOT tracked by ORCID ──────────────────────────────────────
 MANUAL_ENTRIES = [
@@ -57,38 +131,37 @@ MANUAL_ENTRIES = [
         "year": 2025,
         "norm_title": "a tutorial on bayesian hypothesis testing of correlation coefficients using the bfpackmodule in jasp",
         "text": (
-            "- Mulder, J., **Pfadt, J. M.**, & Wagenmakers, E.-J. (2025). "
-            "A tutorial on Bayesian hypothesis testing of correlation coefficients "
-            "using the BFpack-module in JASP. *Behavior Research Methods, 57*(11), 311. "
-            "[https://doi.org/10.3758/s13428-025-02846-5]"
-            "(https://doi.org/10.3758/s13428-025-02846-5)"
+            '<li>Mulder, J., <strong>Pfadt, J. M.</strong>, &amp; Wagenmakers, E.-J. (2025). '
+            'A tutorial on Bayesian hypothesis testing of correlation coefficients '
+            'using the BFpack-module in JASP. <em>Behavior Research Methods, 57</em>(11), 311. '
+            '<a href="https://doi.org/10.3758/s13428-025-02846-5">'
+            'https://doi.org/10.3758/s13428-025-02846-5</a></li>'
         ),
     },
     {
         "year": 2023,
         "norm_title": "dissertation",
         "text": (
-            "- **Pfadt, J. M.** (2023), *The present and future of reliability "
-            "analyis: Advances in theory and practice* [Doctoral dissertation, "
-            "Ulm University]. [http://dx.doi.org/10.18725/OPARU-49700]"
-            "(https://doi.org/10.18725/OPARU-49700)"
+            '<li><strong>Pfadt, J. M.</strong> (2023), <em>The present and future of reliability '
+            'analyis: Advances in theory and practice</em> [Doctoral dissertation, '
+            'Ulm University]. <a href="https://doi.org/10.18725/OPARU-49700">'
+            'http://dx.doi.org/10.18725/OPARU-49700</a></li>'
         ),
     },
     {
         "year": 2023,
         "norm_title": "reliability encyclopedia",
         "text": (
-            "- Sijtsma, K., & **Pfadt, J. M.** (2023). Reliability. In R. "
-            "Tierney, F. Rizvi, & K. Ercikan (Eds.), *International encyclopedia "
-            "of education* (4th ed., pp. 21\u201334). Elsevier. "
-            "[https://doi.org/10.1016/B978-0-12-818630-5.10004-1]"
-            "(https://doi.org/10.1016/B978-0-12-818630-5.10004-1)"
+            '<li>Sijtsma, K., &amp; <strong>Pfadt, J. M.</strong> (2023). Reliability. In R. '
+            'Tierney, F. Rizvi, &amp; K. Ercikan (Eds.), <em>International encyclopedia '
+            'of education</em> (4th ed., pp. 21\u201334). Elsevier. '
+            '<a href="https://doi.org/10.1016/B978-0-12-818630-5.10004-1">'
+            'https://doi.org/10.1016/B978-0-12-818630-5.10004-1</a></li>'
         ),
     },
 ]
 
 # ── Name overrides for contributors whose names need fixing ──────────────────
-# Keys are lowercased full names as they appear in ORCID.
 NAME_OVERRIDES = {
     "eric-jan wagenmakers": "Wagenmakers, E.-J.",
     "jan peter de ruiter": "De Ruiter, J. P.",
@@ -98,6 +171,11 @@ NAME_OVERRIDES = {
 
 
 # ─── Helpers ─────────────────────────────────────────────────────────────────
+
+def html_escape(s: str) -> str:
+    """Minimal HTML escaping."""
+    return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+
 
 def api_get(path: str) -> dict:
     url = f"{ORCID_API}/{path}"
@@ -148,18 +226,11 @@ def extract_summary_info(summary: dict) -> dict:
 
 
 def deduplicate(all_works: list[dict]) -> list[dict]:
-    """Group works by normalized title, pick best from each group.
-
-    Priority: published > preprint; within same type: newer date, higher version.
-    Also merges groups whose titles are leading substrings of each other
-    (e.g., a preprint with a shorter title that later got a subtitle on publication).
-    """
-    # Phase 1: exact-match groups
+    """Group works by normalized title, pick best from each group."""
     groups: dict[str, list[dict]] = defaultdict(list)
     for w in all_works:
         groups[w["norm_title"]].append(w)
 
-    # Phase 2: merge groups whose titles overlap (one starts with the other)
     keys = sorted(groups.keys(), key=len)
     merged: dict[str, list[dict]] = {}
     for k in keys:
@@ -177,7 +248,6 @@ def deduplicate(all_works: list[dict]) -> list[dict]:
             else:
                 merged[canonical].extend(groups[k])
 
-    # Phase 3: pick best from each merged group
     selected = []
     for canon_title, works in merged.items():
         published = [w for w in works if w["type"] in PUBLISHED_TYPES]
@@ -200,11 +270,7 @@ def fetch_detail(put_code: int) -> dict:
 
 
 def _to_apa_name(full: str) -> str:
-    """Convert 'First M. Last' -> 'Last, F. M.' (best-effort).
-
-    Handles name particles (van, de, den, von, etc.).
-    """
-    # Check overrides first
+    """Convert 'First M. Last' -> 'Last, F. M.' (best-effort)."""
     key = full.lower().strip()
     if key in NAME_OVERRIDES:
         return NAME_OVERRIDES[key]
@@ -213,7 +279,7 @@ def _to_apa_name(full: str) -> str:
         return NAME_OVERRIDES[key_no_dot]
 
     if "," in full:
-        return full  # already APA-ish
+        return full
 
     parts = full.split()
     if len(parts) < 2:
@@ -245,9 +311,9 @@ def format_authors(contributors: list) -> str:
         if not name:
             continue
         if "pfadt" in name.lower():
-            apa = f"**{BOLD_NAME}**"
+            apa = f"<strong>{BOLD_NAME}</strong>"
         else:
-            apa = _to_apa_name(name)
+            apa = html_escape(_to_apa_name(name))
         names.append(apa)
 
     if not names:
@@ -256,19 +322,19 @@ def format_authors(contributors: list) -> str:
         return ", ".join(names[:MAX_AUTHORS_BEFORE_ELLIPSIS]) + ", . . . " + names[-1]
     if len(names) == 1:
         return names[0]
-    return ", ".join(names[:-1]) + ", & " + names[-1]
+    return ", ".join(names[:-1]) + ", &amp; " + names[-1]
 
 
 def format_entry(detail: dict) -> tuple[int, str]:
     title_obj = detail.get("title", {}).get("title", {})
-    title = title_obj.get("value", "Unknown title")
+    title = html_escape(title_obj.get("value", "Unknown title"))
     wtype = detail.get("type", "")
 
     pd = detail.get("publication-date") or {}
     year = int((pd.get("year") or {}).get("value", 0))
 
     journal_obj = detail.get("journal-title") or {}
-    journal = journal_obj.get("value", "")
+    journal = html_escape(journal_obj.get("value", ""))
 
     ext_ids = (detail.get("external-ids") or {}).get("external-id", [])
     doi = ""
@@ -281,17 +347,18 @@ def format_entry(detail: dict) -> tuple[int, str]:
     authors_str = format_authors(contributors)
 
     if wtype == "preprint":
-        line = f"- {authors_str} ({year}). *{title}*."
+        line = f"<li>{authors_str} ({year}). <em>{title}</em>."
         line += f" {journal}." if journal else " PsyArXiv."
     else:
-        line = f"- {authors_str} ({year}). {title}."
+        line = f"<li>{authors_str} ({year}). {title}."
         if journal:
-            line += f" *{journal}*."
+            line += f" <em>{journal}</em>."
 
     if doi:
         doi_url = f"https://doi.org/{doi}"
-        line += f" [{doi_url}]({doi_url})"
+        line += f' <a href="{doi_url}">{doi_url}</a>'
 
+    line += "</li>"
     return year, line
 
 
@@ -304,7 +371,6 @@ def main():
     data = api_get("works")
     groups = data.get("group", [])
 
-    # Flatten all summaries across all groups
     all_works = []
     for g in groups:
         for s in g.get("work-summary", []):
@@ -312,14 +378,11 @@ def main():
 
     print(f"  Found {len(all_works)} total work entries across {len(groups)} groups.")
 
-    # Deduplicate by normalized title
     selected = deduplicate(all_works)
     print(f"  After deduplication: {len(selected)} unique works.")
 
-    # Sort by year desc, month desc
     selected.sort(key=lambda w: (w["year"], w["month"]), reverse=True)
 
-    # Fetch full details
     entries: list[tuple[int, str]] = []
     for i, w in enumerate(selected):
         pc = w["put_code"]
@@ -332,16 +395,13 @@ def main():
     manual_norm_titles = {me["norm_title"] for me in MANUAL_ENTRIES if "norm_title" in me}
     filtered_entries: list[tuple[int, str]] = []
     for year, line in entries:
-        # Check if this is an ORCID preprint superseded by a manual entry
         skip = False
         if "PsyArXiv" in line:
             for w in selected:
                 if w["type"] == "preprint":
-                    # Check if this line corresponds to a work whose title matches a manual entry
                     wnt = w["norm_title"]
                     for mnt in manual_norm_titles:
                         if wnt.startswith(mnt) or mnt.startswith(wnt):
-                            # This preprint is covered by a manual (published) entry
                             if w["title"][:30].lower() in line[:200].lower():
                                 skip = True
                                 break
@@ -350,11 +410,10 @@ def main():
         if not skip:
             filtered_entries.append((year, line))
         else:
-            print(f"  (suppressing ORCID preprint covered by manual entry)")
+            print("  (suppressing ORCID preprint covered by manual entry)")
 
     entries = filtered_entries
 
-    # Add all manual entries
     for me in MANUAL_ENTRIES:
         entries.append((me["year"], me["text"]))
 
@@ -366,24 +425,26 @@ def main():
     years_desc = sorted(by_year.keys(), reverse=True)
 
     # Build output
-    lines = [FRONT_MATTER, "### Scientific"]
+    lines = [HTML_TOP]
     for y in years_desc:
-        lines.append(f"#### {y}")
+        lines.append(f"          <h4>{y}</h4>")
+        lines.append("          <ul>")
         for entry in by_year[y]:
-            lines.append(entry)
+            lines.append(f"            {entry}")
+        lines.append("          </ul>")
         lines.append("")
 
-    lines.append(BLOG_POSTS_SECTION)
+    lines.append(HTML_BOTTOM)
 
     output = "\n".join(lines)
 
     if write:
-        with open(PUBLICATIONS_MD, "w") as f:
+        with open(PUBLICATIONS_FILE, "w") as f:
             f.write(output)
-        print(f"\n✓ Wrote {PUBLICATIONS_MD}")
+        print(f"\n✓ Wrote {PUBLICATIONS_FILE}")
     else:
         print("\n" + "=" * 72)
-        print("PREVIEW (pass --write to overwrite publications.md):")
+        print("PREVIEW (pass --write to overwrite publications.html):")
         print("=" * 72)
         print(output)
 

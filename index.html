@@ -4,11 +4,19 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Page not found | Julius M. Pfadt</title>
+  <title>Julius M. Pfadt</title>
   <link rel="stylesheet" href="/style.css">
   <link href="https://fonts.googleapis.com/css2?family=PT+Serif&amp;family=Roboto&amp;family=Roboto+Slab&amp;family=STIX+Two+Text&amp;display=swap" rel="stylesheet">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NCG60VZ1HG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NCG60VZ1HG');
+  </script>
 </head>
-<body>
+<body class="homepage">
 
   <header class="site-header" role="banner">
     <div class="wrapper">
@@ -33,10 +41,18 @@
 
   <main class="page-content" aria-label="Content">
     <div class="wrapper">
-      <div style="margin: 10px auto; max-width: 600px; text-align: center;">
-        <h1 style="margin: 30px 0; font-size: 4em; line-height: 1; letter-spacing: -1px;">404</h1>
-        <p><strong>Page not found :(</strong></p>
-        <p>The requested page could not be found.</p>
+      <div class="home">
+        <img style="float: right;" src="/assets/images/me_bw.png" width="150" alt="Julius M. Pfadt">
+
+        <p>Hello.</p>
+
+        <p>I am a postdoctoral researcher at the University of Amsterdam, currently working on the ERC-project &ldquo;Coherent Hypothesis Tests for Experimental Research&rdquo; with Eric-Jan Wagenmakers. Before that, I worked on Bayesian structural equation modeling funded by a Walter-Benjamin-Fellowship from the German Research Foundation (DFG).</p>
+
+        <p>My professional interest lies with statistical modeling: in particular, developing methods to help researchers learn about patterns in their data. These methods are ideally, but not exclusively, Bayesian. In my published work, I mainly focus on psychometrics, particularly reliability estimation and structural equation modeling.</p>
+
+        <p>In addition to my research, I develop open-source tools for statistics, including modules for <a href="https://jasp-stats.org">JASP</a> (BFpack, Factor, Reliability, SEM) and the R package Bayesrel. I am also a co-founder of <a href="https://jasp-services.com">JASP Services BV</a>.</p>
+
+        <p>I strongly believe that science should be accessible to everyone. To that end, I strive to publish open-access content whenever possible, and I ensure that the methods I develop are implemented in free and open-source software platforms, such as R and JASP.</p>
       </div>
     </div>
   </main>
