@@ -42,20 +42,33 @@
   <main class="page-content" aria-label="Content">
     <div class="wrapper">
       <div class="home">
-        <picture style="float: right;">
-          <source media="(max-width: 600px)" srcset="/assets/images/pic_mobile.png">
-          <img src="/assets/images/pic_bw.png" width="150" alt="Julius M. Pfadt">
-        </picture>
+        <section class="home-intro">
+          <img id="home-profile-image" src="/assets/images/pic_bw.png" width="150" alt="Julius M. Pfadt" style="float: right; margin-left: 20px; margin-bottom: 10px; padding-left: 0; padding-bottom: 0; border-radius: 6px;">
 
-        <p>Hello.</p>
+          <p>Hello.</p>
 
-        <p>I am a postdoctoral researcher at the University of Amsterdam, currently working on the ERC-project &ldquo;Coherent Hypothesis Tests for Experimental Research&rdquo; with Eric-Jan Wagenmakers. Before that, I worked on Bayesian structural equation modeling funded by a Walter-Benjamin-Fellowship from the German Research Foundation (DFG).</p>
+          <p>I am a postdoctoral researcher at the University of Amsterdam, currently working on the ERC-project &ldquo;Coherent Hypothesis Tests for Experimental Research&rdquo; with Eric-Jan Wagenmakers. Before that, I worked on Bayesian structural equation modeling funded by a Walter-Benjamin-Fellowship from the German Research Foundation (DFG).</p>
 
-        <p>My professional interest lies with statistical modeling: in particular, developing methods to help researchers learn about patterns in their data. These methods are ideally, but not exclusively, Bayesian. In my published work, I mainly focus on psychometrics, particularly reliability estimation and structural equation modeling.</p>
+          <p>My professional interest lies with statistical modeling: in particular, developing methods to help researchers learn about patterns in their data. These methods are ideally, but not exclusively, Bayesian. In my published work, I mainly focus on psychometrics, particularly reliability estimation and structural equation modeling.</p>
 
-        <p>In addition to my research, I develop open-source tools for statistics, including modules for <a href="https://jasp-stats.org">JASP</a> (BFpack, Factor, Reliability, SEM) and the R package Bayesrel. I am also a co-founder of <a href="https://jasp-services.com">JASP Services BV</a>.</p>
+          <p>In addition to my research, I develop open-source tools for statistics, including modules for <a href="https://jasp-stats.org">JASP</a> (BFpack, Factor, Reliability, SEM) and the R package Bayesrel. I am also a co-founder of <a href="https://jasp-services.com">JASP Services BV</a>.</p>
 
-        <p>I strongly believe that science should be accessible to everyone. To that end, I strive to publish open-access content whenever possible, and I ensure that the methods I develop are implemented in free and open-source software platforms, such as R and JASP.</p>
+          <p>I strongly believe that science should be accessible to everyone. To that end, I strive to publish open-access content whenever possible, and I ensure that the methods I develop are implemented in free and open-source software platforms, such as R and JASP.</p>
+        </section>
+
+        <script>
+          (function () {
+            var profile = document.getElementById('home-profile-image');
+            if (!profile) return;
+            if (window.matchMedia('(max-width: 600px)').matches) {
+              profile.src = '/assets/images/pic_mobile.png';
+              profile.width = 130;
+              profile.style.float = 'none';
+              profile.style.display = 'block';
+              profile.style.margin = '0 auto 12px auto';
+            }
+          })();
+        </script>
       </div>
     </div>
   </main>
@@ -66,8 +79,8 @@
         <div class="footer-col footer-col-1">
           <ul class="contact-list">
             <li class="p-name">
-              <p style="color:#000000;"><b>julius.pfadt at gmail.com</b></p>
-              <p style="color:#000000; line-height:0">last edit Mar 1, 2026</p>
+              <p class="contact-email"><b>julius.pfadt at gmail.com</b></p>
+              <p class="contact-meta">last edit Mar 1, 2026</p>
             </li>
           </ul>
         </div>
