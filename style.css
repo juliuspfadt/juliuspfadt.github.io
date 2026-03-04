@@ -253,18 +253,14 @@ ul.social-media-list li { display: inline-block; margin: 0; }
   }
 
   .home {
-    padding: 15px;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0;
   }
 
   .home-intro {
     display: block;
-  }
-
-  .home-profile {
-    float: none;
-    display: block;
-    width: 130px;
-    margin: 0 auto 12px auto;
   }
 
   .talk-preview {

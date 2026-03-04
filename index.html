@@ -62,10 +62,11 @@
             if (!profile) return;
             if (window.matchMedia('(max-width: 600px)').matches) {
               profile.src = '/assets/images/pic_mobile.png';
-              profile.width = 130;
-              profile.style.float = 'none';
-              profile.style.display = 'block';
-              profile.style.margin = '0 auto 12px auto';
+              profile.width = 120;
+              profile.style.float = 'right';
+              profile.style.display = 'inline';
+              profile.style.marginLeft = '12px';
+              profile.style.marginBottom = '8px';
             }
           })();
         </script>
