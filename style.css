@@ -163,10 +163,10 @@ ul.social-media-list li { display: inline-block; margin: 0; }
 
 /* ── Homepage layout ──────────────────────────────────────────────── */
 .home {
-  background-color: rgba(255, 255, 255, 0.92);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  border-radius: 8px;
-  padding: 20px;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
 }
 
 .home-intro {
