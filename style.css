@@ -149,6 +149,7 @@ table td { border: 1px solid #e8e8e8; }
 .site-footer { border-top: 1px solid #000; padding: 10px 0; }
 .contact-list, ul.social-media-list { list-style: none; margin-left: 0; padding: 0; }
 ul.social-media-list li { display: inline-block; margin: 0; }
+.social-media-list li:not(:last-child) { margin-right: 18px; }
 .footer-col-wrapper { font-size: 15px; color: #000; margin-left: 0; }
 .footer-col { float: left; }
 .footer-col-1 { float: left; margin-top: 10px; }
