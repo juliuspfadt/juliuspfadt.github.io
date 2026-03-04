@@ -253,9 +253,9 @@ ul.social-media-list li { display: inline-block; margin: 0; }
   }
 
   .home {
-    background-color: transparent;
-    border: none;
-    border-radius: 0;
+    background-color: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
     padding: 0;
   }
 
