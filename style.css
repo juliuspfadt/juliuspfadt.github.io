@@ -178,6 +178,57 @@ ul.social-media-list li { display: inline-block; margin: 0; }
   margin-bottom: 0;
 }
 
+.home-spotlight {
+  margin-top: 32px;
+  margin-bottom: 44px;
+}
+
+.spotlight-card {
+  display: block;
+  padding: 24px 26px;
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  border-radius: 14px;
+  background-color: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
+  text-decoration: none;
+}
+
+.spotlight-card:hover,
+.spotlight-card:focus {
+  background-color: rgba(255, 255, 255, 0.94);
+}
+
+.spotlight-label {
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #5a5a5a;
+}
+
+.spotlight-title {
+  margin-bottom: 8px;
+  font-size: 30px;
+  line-height: 1.15;
+}
+
+.spotlight-meta {
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: #5a5a5a;
+}
+
+.spotlight-summary {
+  margin-bottom: 14px;
+}
+
+.spotlight-link {
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .home-profile {
   float: right;
   margin-left: 20px;
@@ -213,6 +264,39 @@ ul.social-media-list li { display: inline-block; margin: 0; }
 
 .download-link {
   color: #5a5a5a;
+}
+
+/* ── Blog page ────────────────────────────────────────────────────── */
+.blog-list {
+  list-style: none;
+  margin-left: 0;
+}
+
+.blog-entry {
+  margin-bottom: 24px;
+  padding: 24px;
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  background-color: #fafafa;
+}
+
+.blog-entry:last-child {
+  margin-bottom: 0;
+}
+
+.blog-entry-date {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #5a5a5a;
+}
+
+.blog-entry-title {
+  margin-bottom: 12px;
+}
+
+.blog-entry p:last-child {
+  margin-bottom: 0;
 }
 
 /* ── 404 page ─────────────────────────────────────────────────────── */
@@ -270,5 +354,14 @@ ul.social-media-list li { display: inline-block; margin: 0; }
     float: none;
     display: block;
     margin: 0 auto 12px auto;
+  }
+
+  .spotlight-card,
+  .blog-entry {
+    padding: 18px;
+  }
+
+  .spotlight-title {
+    font-size: 24px;
   }
 }
