@@ -124,6 +124,11 @@ table td { border: 1px solid #e8e8e8; }
   color: #000; line-height: 1.5; text-decoration: none; font-size: 18px;
 }
 .site-nav .page-link:not(:last-child) { margin-right: 20px; }
+.site-nav .page-link[aria-current="page"] {
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 
 @media screen and (max-width: 600px) {
   .site-nav {

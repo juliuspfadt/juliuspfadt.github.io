@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Julius M. Pfadt</title>
   <link rel="stylesheet" href="/style.css?v=20260319a">
+  <script src="/assets/js/site-shell.js" defer></script>
   <link href="https://fonts.googleapis.com/css2?family=PT+Serif&amp;family=Roboto&amp;family=Roboto+Slab&amp;family=STIX+Two+Text&amp;display=swap" rel="stylesheet">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-NCG60VZ1HG"></script>
@@ -16,45 +17,13 @@
     gtag('config', 'G-NCG60VZ1HG');
   </script>
 </head>
-<body class="homepage">
+<body class="homepage" data-site-title="Julius M. Pfadt (PhD)">
 
-  <header class="site-header" role="banner">
-    <div class="wrapper">
-      <a class="site-title" rel="author" href="/">Julius M. Pfadt (PhD)</a>
-      <nav class="site-nav">
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-        <label for="nav-trigger">
-          <span class="menu-icon">
-            <svg viewBox="0 0 18 15" width="18px" height="15px">
-              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
-            </svg>
-          </span>
-        </label>
-        <div class="trigger">
-          <a class="page-link" href="/publications.html">Publications</a>
-          <a class="page-link" href="/software.html">Software</a>
-          <a class="page-link" href="/talks.html">Talks</a>
-          <a class="page-link" href="/blog.html">Blog</a>
-        </div>
-      </nav>
-    </div>
-  </header>
+  <div id="site-header"></div>
 
   <main class="page-content" aria-label="Content">
     <div class="wrapper">
       <div class="home">
-        <!-- Spotlight temporarily disabled.
-        <section class="home-spotlight" aria-labelledby="latest-blog-entry">
-          <a class="spotlight-card" href="/blog.html#placeholder-post">
-            <p class="spotlight-label">Latest</p>
-            <h2 id="latest-blog-entry" class="spotlight-title">A space for notes, updates, and ideas</h2>
-            <p class="spotlight-meta">March 19, 2026</p>
-            <p class="spotlight-summary">This is the first placeholder entry for the new blog section. Future posts can highlight research updates, software notes, teaching materials, or shorter reflections that do not fit elsewhere on the site.</p>
-            <span class="spotlight-link">Read the latest entry</span>
-          </a>
-        </section>
-        -->
-
         <section class="home-intro">
           <img id="home-profile-image" src="/assets/images/pic_bw.png" width="150" alt="Julius M. Pfadt" style="float: right; margin-left: 20px; margin-bottom: 10px; padding-left: 0; padding-bottom: 0; border-radius: 6px;">
 
@@ -64,6 +33,16 @@
           <p>I am a researcher in the lab of Eric-Jan Wagenmakers at the University of Amsterdam and a former DFG Walter-Benjamin fellow. My research centers on (Bayesian) statistical modeling, in particular, psychometrics, reliability estimation, and structural equation modeling. I develop open-source tools for <a href="https://jasp-stats.org">JASP</a> (BFpack, Factor, Reliability, SEM) and the R package Bayesrel, and I co-founded <a href="https://jasp-services.com">JASP Services BV</a>. I am committed to open science and accessible methodology.</p>
           <!-- END GENERATED ABOUT -->
 
+        </section>
+
+        <section class="home-spotlight" aria-labelledby="latest-blog-entry">
+          <a class="spotlight-card" id="latest-blog-link" href="/blog.html">
+            <p class="spotlight-label">Latest</p>
+            <h2 id="latest-blog-entry" class="spotlight-title">Latest blog post</h2>
+            <p class="spotlight-meta" id="latest-blog-date"></p>
+            <p class="spotlight-summary" id="latest-blog-summary">Visit the blog for the latest research notes, updates, and short posts.</p>
+            <span class="spotlight-link">Read the latest entry</span>
+          </a>
         </section>
 
         <script>
@@ -79,34 +58,64 @@
               profile.style.marginBottom = '8px';
             }
           })();
+
+          (function () {
+            function normalizeSpace(text) {
+              return text.replace(/\s+/g, ' ').trim();
+            }
+
+            function makeExcerpt(text) {
+              var cleaned = normalizeSpace(text);
+              if (cleaned.length <= 240) return cleaned;
+
+              var sentenceEnd = cleaned.search(/[.!?](\s|$)/);
+              if (sentenceEnd >= 180 && sentenceEnd <= 260) {
+                return cleaned.slice(0, sentenceEnd + 1);
+              }
+
+              var truncated = cleaned.slice(0, 240);
+              var lastSpace = truncated.lastIndexOf(' ');
+              if (lastSpace > 0) truncated = truncated.slice(0, lastSpace);
+              return truncated + '...';
+            }
+
+            fetch('/blog.html')
+              .then(function (response) {
+                if (!response.ok) throw new Error('Could not load blog page');
+                return response.text();
+              })
+              .then(function (html) {
+                var parser = new DOMParser();
+                var doc = parser.parseFromString(html, 'text/html');
+                var entry = doc.querySelector('.blog-entry');
+                if (!entry) return;
+
+                var link = document.getElementById('latest-blog-link');
+                var title = document.getElementById('latest-blog-entry');
+                var date = document.getElementById('latest-blog-date');
+                var summary = document.getElementById('latest-blog-summary');
+
+                var entryId = entry.getAttribute('id');
+                var entryTitle = entry.querySelector('.blog-entry-title');
+                var entryDate = entry.querySelector('.blog-entry-date');
+                var entryBody = entry.querySelector('.blog-entry-body') || entry.querySelector('p');
+                if (!link || !title || !date || !summary || !entryTitle || !entryDate || !entryBody) return;
+
+                link.href = entryId ? '/blog.html#' + entryId : '/blog.html';
+                title.textContent = normalizeSpace(entryTitle.textContent);
+                date.textContent = normalizeSpace(entryDate.textContent);
+                summary.textContent = makeExcerpt(entryBody.textContent);
+              })
+              .catch(function () {
+                /* Leave the generic fallback card in place if the fetch fails. */
+              });
+          })();
         </script>
       </div>
     </div>
   </main>
 
-  <footer class="site-footer h-card">
-    <div class="wrapper">
-      <div class="footer-col-wrapper">
-        <div class="footer-col footer-col-1">
-          <ul class="contact-list">
-            <li class="p-name">
-              <p class="contact-email"><b>julius.pfadt at gmail.com</b></p>
-              <p class="contact-meta">last edit Mar 23, 2026</p>
-            </li>
-          </ul>
-        </div>
-        <div class="footer-col footer-col-2">
-          <ul class="social-media-list">
-            <li><a href="https://github.com/juliuspfadt"><img alt="Github" src="/assets/images/github-mark.png" width="24" height="24"></a></li>
-            <li><a href="https://www.linkedin.com/in/julius-m-pfadt-8b8a45179"><img alt="LinkedIn" src="/assets/images/linkedin-logo.png" width="24" height="24"></a></li>
-            <li><a href="https://orcid.org/0000-0002-0758-5502"><img alt="ORCID" src="/assets/images/orcid.png" width="24" height="24"></a></li>
-            <li><a href="https://scholar.google.com/citations?user=Db1-WloAAAAJ&amp;hl=en"><img alt="Google Scholar" src="/assets/images/google-scholar_icon.png" width="24" height="24"></a></li>
-            <li><a href="https://www.researchgate.net/profile/Julius-Pfadt"><img alt="ResearchGate" src="/assets/images/researchgate.png" width="24" height="24"></a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </footer>
+  <div id="site-footer"></div>
 
 </body>
 </html>
