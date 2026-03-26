@@ -300,6 +300,20 @@ ul.social-media-list li { display: inline-block; margin: 0; }
   margin-bottom: 12px;
 }
 
+.blog-entry-image {
+  width: 30%;
+  max-width: 280px;
+  height: auto;
+  float: right;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  padding-left: 0;
+  padding-bottom: 0;
+  border: 1px solid #dcdcdc;
+  border-radius: 6px;
+  background-color: #fff;
+}
+
 .blog-entry p:last-child {
   margin-bottom: 0;
 }
@@ -354,6 +368,14 @@ ul.social-media-list li { display: inline-block; margin: 0; }
   }
 
   .talk-preview {
+    width: 100%;
+    max-width: 420px;
+    float: none;
+    display: block;
+    margin: 0 auto 12px auto;
+  }
+
+  .blog-entry-image {
     width: 100%;
     max-width: 420px;
     float: none;

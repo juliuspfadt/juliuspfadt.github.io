@@ -34,17 +34,9 @@
               <time class="blog-entry-date" datetime="2026-03-26">March 26, 2026</time>
               <h3 class="blog-entry-title">Bayes Factors for Structural Equation Models with Bridge Sampling and blavaan</h3>
               <div class="blog-entry-body">
-                I recently completed most of the work on the biggest project of my career so far, which was also the focus of my WB fellowship: a new paper on Bayesian model comparison in structural equation modeling (SEM). The central question is simple: how can we compute Bayes factors for SEMs in a way that is practical, transparent, and flexible enough to incorporate substantive prior information?
-                <br><br>
-                In practice, SEM researchers often rely on the BIC for model comparison. That makes sense: it is fast, widely available, and easy to interpret. But the BIC is only an approximation to a Bayesian model comparison, and it comes with an implicit prior that the user cannot easily inspect or modify. In our paper, we make that prior explicit by constructing a unit-information prior from maximum-likelihood fits and then estimating marginal likelihoods directly with bridge sampling in blavaan.
-                <br><br>
-                This gives a useful baseline that mirrors the BIC while moving the workflow into a fully Bayesian framework. From there, we show how the evidence changes when one modifies the prior for the focal structural relations. In particular, we examine zero-centered priors, narrower priors, and directional restrictions. A simulation study shows that the bridge-sampled Bayes factors track the BIC closely under the unit-information prior, but that modest prior refinements can sharpen the evidence substantially when they are well aligned with theory.
-                <br><br>
-                We then illustrate two extensions in an empirical example. The first uses robust mixture priors, which combine a vague "insurance" prior with a more informative directional prior. The second uses Bayesian model averaging to propagate uncertainty across a set of competing structural models rather than conditioning inference on a single selected model.
-                <br><br>
-                The broader goal of the paper is to make Bayesian evidence assessment in SEM more accessible. My hope is that this workflow helps researchers move beyond default approximations and think more explicitly about how prior assumptions interact with structural theory.
-                <br><br>
-                Code, model syntax, and materials are available on <a href="https://osf.io/wyuqd/overview">OSF</a>. The preprint is available at <a href="https://doi.org/10.31234/osf.io/pt2bc_v1">https://doi.org/10.31234/osf.io/pt2bc_v1</a>.
+                <img class="blog-entry-image" src="/assets/images/baseModZoom.png" alt="Base model diagram">
+                I recently completed a very big chunk of my WB fellowship project. The output: A new paper on Bayesian model comparison in structural equation modeling (SEM). The central question is simple: how can we compute Bayes factors for SEMs in a way that is practical, transparent, and flexible enough to incorporate substantive prior information?
+                For the curious: The preprint is available at <a href="https://doi.org/10.31234/osf.io/pt2bc_v1">https://doi.org/10.31234/osf.io/pt2bc_v1</a>.
               </div>
             </article>
           </div>
