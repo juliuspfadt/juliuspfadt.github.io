@@ -50,6 +50,8 @@ APA_PROTECTED_TITLE_WORDS = {
 
 PUBLICATIONS_FILE = "publications.html"
 CV_MAIN_FILE = "cv/main.typ"
+REVIEWING_SECTION_TITLE = "Reviewing"
+REVIEWING_PAGE_TITLE = "Ad-hoc reviewing"
 
 GENERATED_PUBLICATIONS_START = "// BEGIN GENERATED PUBLICATIONS"
 GENERATED_PUBLICATIONS_END = "// END GENERATED PUBLICATIONS"
@@ -84,6 +86,7 @@ HTML_TOP = """\
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Publications | Julius M. Pfadt</title>
   <link rel="stylesheet" href="/style.css">
+  <script src="/assets/js/site-shell.js" defer></script>
   <link href="https://fonts.googleapis.com/css2?family=PT+Serif&amp;family=Roboto&amp;family=Roboto+Slab&amp;family=STIX+Two+Text&amp;display=swap" rel="stylesheet">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-NCG60VZ1HG"></script>
@@ -96,26 +99,7 @@ HTML_TOP = """\
 </head>
 <body>
 
-  <header class="site-header" role="banner">
-    <div class="wrapper">
-      <a class="site-title" rel="author" href="/">Julius M. Pfadt</a>
-      <nav class="site-nav">
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-        <label for="nav-trigger">
-          <span class="menu-icon">
-            <svg viewBox="0 0 18 15" width="18px" height="15px">
-              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
-            </svg>
-          </span>
-        </label>
-        <div class="trigger">
-          <a class="page-link" href="/publications.html">Publications</a>
-          <a class="page-link" href="/software.html">Software</a>
-          <a class="page-link" href="/talks.html">Talks</a>
-        </div>
-      </nav>
-    </div>
-  </header>
+  <div id="site-header"></div>
 
   <main class="page-content" aria-label="Content">
     <div class="wrapper">
@@ -129,6 +113,11 @@ HTML_TOP = """\
 
 HTML_BOTTOM = """\
 
+          <h3>{reviewing_title}</h3>
+          <ul>
+{reviewing_items}
+          </ul>
+
           <h3>Blog posts</h3>
 
           <h4>2021</h4>
@@ -140,29 +129,7 @@ HTML_BOTTOM = """\
     </div>
   </main>
 
-  <footer class="site-footer h-card">
-    <div class="wrapper">
-      <div class="footer-col-wrapper">
-        <div class="footer-col footer-col-1">
-          <ul class="contact-list">
-            <li class="p-name">
-              <p style="color:#000000;"><b>julius.pfadt at gmail.com</b></p>
-              <p style="color:#000000; line-height:0">last edit Mar 1, 2026</p>
-            </li>
-          </ul>
-        </div>
-        <div class="footer-col footer-col-2">
-          <ul class="social-media-list">
-            <li><a href="https://github.com/juliuspfadt"><img alt="Github" src="/assets/images/github-mark.png" width="24" height="24"></a></li>
-            <li><a href="https://www.linkedin.com/in/julius-m-pfadt-8b8a45179"><img alt="LinkedIn" src="/assets/images/linkedin-logo.png" width="24" height="24"></a></li>
-            <li><a href="https://orcid.org/0000-0002-0758-5502"><img alt="ORCID" src="/assets/images/orcid.png" width="24" height="24"></a></li>
-            <li><a href="https://scholar.google.com/citations?user=Db1-WloAAAAJ&amp;hl=en"><img alt="Google Scholar" src="/assets/images/google-scholar_icon.png" width="24" height="24"></a></li>
-            <li><a href="https://www.researchgate.net/profile/Julius-Pfadt"><img alt="ResearchGate" src="/assets/images/researchgate.png" width="24" height="24"></a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </footer>
+  <div id="site-footer"></div>
 
 </body>
 </html>
@@ -302,6 +269,52 @@ NAME_OVERRIDES = {
 def html_escape(s: str) -> str:
     """Minimal HTML escaping."""
     return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+
+
+def replace_inline_markup(text: str, marker: str, tag: str) -> str:
+    pattern = re.escape(marker) + r"(.+?)" + re.escape(marker)
+    return re.sub(pattern, lambda match: f"<{tag}>{html_escape(match.group(1).strip())}</{tag}>", text)
+
+
+def typst_inline_to_html(text: str) -> str:
+    escaped = html_escape(" ".join(text.split()))
+    escaped = replace_inline_markup(escaped, "*", "strong")
+    escaped = replace_inline_markup(escaped, "_", "em")
+    return escaped
+
+
+def extract_reviewing_journals(main_typ: str) -> list[str]:
+    section_pattern = re.compile(
+        rf"(?ms)^= {re.escape(REVIEWING_SECTION_TITLE)}\s*\n+(.*?)(?=^= |\Z)"
+    )
+    match = section_pattern.search(main_typ)
+    if match is None:
+        raise RuntimeError(f"Could not find the {REVIEWING_SECTION_TITLE} section in {CV_MAIN_FILE}.")
+
+    section_body = match.group(1).strip()
+    if not section_body:
+        raise RuntimeError(f"The {REVIEWING_SECTION_TITLE} section in {CV_MAIN_FILE} is empty.")
+
+    section_text = " ".join(
+        line.strip() for line in section_body.splitlines() if line.strip()
+    )
+    if not section_text.startswith("*Ad-hoc reviewer for*:"):
+        raise RuntimeError(
+            f"Could not find the ad-hoc reviewer entry in the {REVIEWING_SECTION_TITLE} section of {CV_MAIN_FILE}."
+        )
+
+    _, journals_text = section_text.split(":", maxsplit=1)
+    journals_text = journals_text.strip()
+    if journals_text.startswith("_") and journals_text.endswith("_"):
+        journals_text = journals_text[1:-1].strip()
+
+    journals = [journal.strip() for journal in journals_text.split(",") if journal.strip()]
+    if not journals:
+        raise RuntimeError(
+            f"Could not extract any journals from the ad-hoc reviewer entry in {CV_MAIN_FILE}."
+        )
+
+    return journals
 
 
 def bib_escape(s: str) -> str:
@@ -1003,7 +1016,7 @@ def sort_publications(publications: list[Publication]) -> list[Publication]:
     )
 
 
-def render_html(publications: list[Publication]) -> str:
+def render_html(publications: list[Publication], reviewing_journals: list[str]) -> str:
     by_year: dict[int, list[str]] = defaultdict(list)
     for publication in publications:
         if publication.include_in_html:
@@ -1020,7 +1033,15 @@ def render_html(publications: list[Publication]) -> str:
         lines.append("          </ul>")
         lines.append("")
 
-    lines.append(HTML_BOTTOM)
+    lines.append(
+        HTML_BOTTOM.format(
+            reviewing_title=html_escape(REVIEWING_PAGE_TITLE),
+            reviewing_items="\n".join(
+                f"            <li>{html_escape(journal)}</li>"
+                for journal in reviewing_journals
+            ),
+        )
+    )
     return "\n".join(lines)
 
 
@@ -1107,10 +1128,11 @@ def main() -> None:
     write = "--write" in sys.argv
 
     publications = build_publications()
-    html_output = render_html(publications)
 
     with open(CV_MAIN_FILE, "r", encoding="utf-8") as handle:
         main_typ = handle.read()
+    reviewing_journals = extract_reviewing_journals(main_typ)
+    html_output = render_html(publications, reviewing_journals)
     typst_output = update_main_typ(main_typ, render_typst_publications(publications))
 
     if write:
