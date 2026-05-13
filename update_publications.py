@@ -326,6 +326,11 @@ def bib_escape(s: str) -> str:
     )
 
 
+def strip_bibtex_braces(s: str) -> str:
+    """Remove BibTeX brace-protection markers from a plain-text display value."""
+    return s.replace("{", "").replace("}", "")
+
+
 def typst_escape(s: str) -> str:
     """Escape text inserted into Typst content blocks."""
     return (
@@ -441,11 +446,11 @@ def extract_citation_details(bibtex: str, fallback_venue: str) -> CitationDetail
         or fallback_venue
     )
     return CitationDetails(
-        venue=venue,
-        volume=lookup.get("volume", ""),
-        issue=lookup.get("number", ""),
-        pages=normalize_pages(lookup.get("pages", "")),
-        publisher=lookup.get("publisher", ""),
+        venue=strip_bibtex_braces(venue),
+        volume=strip_bibtex_braces(lookup.get("volume", "")),
+        issue=strip_bibtex_braces(lookup.get("number", "")),
+        pages=normalize_pages(strip_bibtex_braces(lookup.get("pages", ""))),
+        publisher=strip_bibtex_braces(lookup.get("publisher", "")),
     )
 
 
