@@ -182,12 +182,12 @@ I am a researcher in the lab of Eric-Jan Wagenmakers at the University of Amster
   show "Pfadt, J. M": strong
 
   // BEGIN GENERATED PUBLICATIONS
-  cvitem([2026], [Mulder, J., & Pfadt, J. M. (2026). #emph[Going in the right direction: A tutorial to directional hypothesis testing using the BFpack module in JASP]. PsyArXiv. #link("https://doi.org/10.31234/osf.io/f582h_v3")[https://doi.org/10.31234/osf.io/f582h_v3]])
+  cvitem([2026], [Pfadt, J. M., Bartoš, F., Godmann, H. R., Waaijers, M., Groot, L., Heo, I., Mensink, L., Nak, J., De Ruiter, J. P., Sarafoglou, A., Siepe, B. S., Arena, G., Akrong, E., Aust, F., van den Bergh, D., Brenner, W., Doekemeijer, R. A., Donzallaz, M. C., van Doorn, J., Echevarria, N. O., . . . Wagenmakers, E.-J. (2026). #emph[A methodological metamorphosis: The rapid rise of Bayesian inference and open science practices in psychology]. PsyArXiv. #link("https://doi.org/10.31234/osf.io/ck3js_v2")[https://doi.org/10.31234/osf.io/ck3js_v2]])
+  cvitem([], [Mulder, J., & Pfadt, J. M. (2026). #emph[Going in the right direction: A tutorial to directional hypothesis testing using the BFpack module in JASP]. PsyArXiv. #link("https://doi.org/10.31234/osf.io/f582h_v3")[https://doi.org/10.31234/osf.io/f582h_v3]])
   cvitem([], [Pfadt, J. M., Merkle, E. C., & Wagenmakers, E.-J. (2026). #emph[Bayes factors for structural equation models with bridge sampling and blavaan]. PsyArXiv. #link("https://doi.org/10.31234/osf.io/pt2bc_v1")[https://doi.org/10.31234/osf.io/pt2bc_v1]])
   cvitem([], [Godmann, H. R., Molenaar, D., Ziegler, M., & Pfadt, J. M. (2026). #emph[A tutorial on assessing measurement invariance with moderated (non-)linear factor analysis in JASP]. PsyArXiv. #link("https://doi.org/10.31234/osf.io/6ftqg_v2")[https://doi.org/10.31234/osf.io/6ftqg_v2]])
-  cvitem([], [Pfadt, J. M., Molenaar, D., Hurks, P., & Sijtsma, K. (2026). A tutorial on estimating the precision of individual test scores for anyone constructing and using psychological tests. #emph[Psychometrika], 1–35. #link("https://doi.org/10.1017/psy.2026.10081")[https://doi.org/10.1017/psy.2026.10081]])
-  cvitem([2025], [Pfadt, J. M., Bartoš, F., Godmann, H. R., Waaijers, M., Groot, L., Heo, I., Mensink, L., Nak, J., De Ruiter, J. P., Sarafoglou, A., Siepe, B. S., Arena, G., Akrong, E., Aust, F., van den Bergh, D., Brenner, W., Doekemeijer, R. A., Donzallaz, M. C., van Doorn, J., Echevarria, N. O., . . . Wagenmakers, E.-J. (2025). #emph[A methodological metamorphosis: The rapid rise of Bayesian inference and open science practices in psychology]. PsyArXiv. #link("https://doi.org/10.31234/osf.io/ck3js_v1")[https://doi.org/10.31234/osf.io/ck3js_v1]])
-  cvitem([], [Mulder, J., Pfadt, J. M., & Wagenmakers, E.-J. (2025). A tutorial on Bayesian hypothesis testing of correlation coefficients using the BFpack-module in JASP. #emph[Behavior Research Methods, 57] (11), 311. #link("https://doi.org/10.3758/s13428-025-02846-5")[https://doi.org/10.3758/s13428-025-02846-5]])
+  cvitem([], [Pfadt, J. M., Molenaar, D., Hurks, P., & Sijtsma, K. (2026). A tutorial on estimating the precision of individual test scores for anyone constructing and using psychological tests. #emph[Psychometrika], 1–22. #link("https://doi.org/10.1017/psy.2026.10081")[https://doi.org/10.1017/psy.2026.10081]])
+  cvitem([2025], [Mulder, J., Pfadt, J. M., & Wagenmakers, E.-J. (2025). A tutorial on Bayesian hypothesis testing of correlation coefficients using the BFpack-module in JASP. #emph[Behavior Research Methods, 57] (11), 311. #link("https://doi.org/10.3758/s13428-025-02846-5")[https://doi.org/10.3758/s13428-025-02846-5]])
   cvitem([2023], [Pfadt, J. M., van den Bergh, D., & Moshagen, M. (2023). Classical and Bayesian uncertainty intervals for the reliability of multidimensional scales. #emph[Structural Equation Modeling: A Multidisciplinary Journal, 30] (3), 349–363. #link("https://doi.org/10.1080/10705511.2022.2124162")[https://doi.org/10.1080/10705511.2022.2124162]])
   cvitem([], [Pfadt, J. M. (2023), #emph[The present and future of reliability analyis: Advances in theory and practice] (Doctoral dissertation, Ulm University). #link("https://doi.org/10.18725/OPARU-49700")[https://doi.org/10.18725/OPARU-49700]])
   cvitem([], [Sijtsma, K., & Pfadt, J. M. (2023). Reliability. In R. Tierney, F. Rizvi, & K. Ercikan (Eds.), #emph[International encyclopedia of education] (4th ed., pp. 21-34). Elsevier. #link("https://doi.org/10.1016/B978-0-12-818630-5.10004-1")[https://doi.org/10.1016/B978-0-12-818630-5.10004-1]])
@@ -222,7 +222,7 @@ I am a researcher in the lab of Eric-Jan Wagenmakers at the University of Amster
 = Teaching
 
 #cventry(
-  [2024],
+  [2024, 2026],
   [Structural Equation Modelling],
   subtitle: [Lecturer],
   location: [Research master course],
@@ -242,17 +242,24 @@ I am a researcher in the lab of Eric-Jan Wagenmakers at the University of Amster
 = Talks
 
 #cventry(
-  [Invited],
-  [Research Section of the Forensic Psychiatry],
-  subtitle: [Bayesian statistics],
-  location: [Guenzburg, Germany]
+  [Conference],
+  [Association for Psychological Science (APS) 2026 Annual Convention],
+  subtitle: ["The Past, Present, and Future of Scientific Reform"],
+  location: [Barcelona, Spain]
 )
 
 #cventry(
   [Conference],
-  [International Meeting of the Psychometric Society 2021], 
-  subtitle: [Bayesian Multidimensional Reliability],
+  [International Meeting of the Psychometric Society 2021],
+  subtitle: ["Bayesian Multidimensional Reliability"],
   location: [online]
+)
+
+#cventry(
+  [Invited],
+  [Research Section of the Forensic Psychiatry],
+  subtitle: ["Bayesian statistics"],
+  location: [Guenzburg, Germany]
 )
 
 // ── Funding, Awards & Scholarships ─────────────────────────
@@ -266,12 +273,15 @@ I am a researcher in the lab of Eric-Jan Wagenmakers at the University of Amster
 // ── Reviewing ──────────────────────────────────────────────
 = Reviewing
 
-*Ad-hoc reviewer for*: _BMC Medical Research Methodology,
+*Ad-hoc reviewer for*: _Behavior Research Methods,
+BMC Medical Research Methodology,
+BMC Musculoskeletal Disorders,
 British Journal of Mathematical and Statistical Psychology,
 Educational and Psychological Measurement,
 European Journal of Psychological Assessment,
 German Journal of Exercise and Sport Research,
 Journal of Mathematical Psychology,
+Perspectives on Psychological Science,
 Psychological Methods,
 Psychometrika,
 Structural Equation Modeling: A Multidisciplinary Journal_
