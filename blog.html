@@ -30,6 +30,18 @@
         <div class="post-content">
 
           <div class="blog-list">
+            <article class="blog-entry" id="bayes-factors-sem-imps-2026">
+              <time class="blog-entry-date" datetime="2026-07-27">July 27, 2026</time>
+              <h3 class="blog-entry-title">Bayes Factors for SEM at IMPS 2026 in Seoul</h3>
+              <div class="blog-entry-body">
+                Last week we presented our work on computing Bayes factors for structural equation models at the International Meeting of the Psychometric Society in Seoul &mdash; a project together with Edgar Merkle and Eric-Jan Wagenmakers.
+                <br><br>
+                The usual shortcut for Bayes factors in SEM is the BIC difference, which quietly commits you to a unit-information prior centered at the MLE. It works, but the prior is hidden and essentially impossible to change. The alternative we propose is a <em>lavaan</em> &rarr; <em>blavaan</em> &rarr; <em>bridgesampling</em> workflow: fit the model to get MLEs and standard errors, specify univariate UI-type priors explicitly, then estimate the marginal likelihoods by bridge sampling. In a small simulation the baseline UI priors reproduce the BIC Bayes factor closely, and tightening the prior or adding a directional constraint sharpens the evidence for the data-generating model &mdash; which is exactly the point: with the prior out in the open, substantive information can actually be put to work.
+                <br><br>
+                Worth emphasizing: none of this waits on new software. The workflow runs today on <em>lavaan</em>, <em>blavaan</em>, and <em>bridgesampling</em> as they already exist on CRAN, and our annotated code is on OSF &mdash; so anyone fitting SEMs in R can compute these Bayes factors now. It has also proven extendable: robust mixture priors, which compare models under a diffuse and an informative prior at once, and Bayesian model averaging over models <em>and</em> priors both build directly on the same three steps. What is still ahead is broader validation and a point-and-click implementation in JASP. Preprint: <a href="https://doi.org/10.31234/osf.io/pt2bc_v1">https://doi.org/10.31234/osf.io/pt2bc_v1</a>, code at <a href="https://osf.io/wyuqd/">https://osf.io/wyuqd/</a>. Slides are on the <a href="/talks.html">talks page</a>.
+              </div>
+            </article>
+
             <article class="blog-entry" id="methodological-metamorphosis-v2">
               <time class="blog-entry-date" datetime="2026-07-06">July 6, 2026</time>
               <h3 class="blog-entry-title">Methodological Metamorphosis: Version 2 Is Up</h3>

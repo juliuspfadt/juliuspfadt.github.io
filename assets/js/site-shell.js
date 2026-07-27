@@ -1,5 +1,5 @@
 (function () {
-  var globalLastEdit = 'July 7, 2026';
+  var globalLastEdit = 'July 27, 2026';
 
   function escapeHtml(text) {
     return String(text)

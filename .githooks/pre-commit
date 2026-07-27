@@ -1,0 +1,28 @@
+#!/bin/sh
+#
+# Stamps today's date into globalLastEdit in assets/js/site-shell.js so the
+# footer's "last edit" line always matches the latest commit (i.e. what you push).
+#
+# Enable once per clone with:
+#   git config core.hooksPath .githooks
+
+set -e
+
+repo_root=$(git rev-parse --show-toplevel)
+shell_js="$repo_root/assets/js/site-shell.js"
+
+[ -f "$shell_js" ] || exit 0
+
+today=$(date "+%B %e, %Y" | tr -s ' ')
+current=$(sed -n "s/^  var globalLastEdit = '\(.*\)';$/\1/p" "$shell_js")
+
+# Nothing to do if the stamp is already today's date (or the line is missing).
+[ -n "$current" ] || exit 0
+[ "$current" != "$today" ] || exit 0
+
+tmp=$(mktemp)
+sed "s/^  var globalLastEdit = '.*';$/  var globalLastEdit = '$today';/" "$shell_js" > "$tmp"
+mv "$tmp" "$shell_js"
+git add "$shell_js"
+
+echo "pre-commit: footer last edit set to $today"
