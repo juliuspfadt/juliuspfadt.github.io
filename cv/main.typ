@@ -189,7 +189,7 @@ I am a researcher in the lab of Eric-Jan Wagenmakers at the University of Amster
   cvitem([], [Pfadt, J. M., Molenaar, D., Hurks, P., & Sijtsma, K. (2026). A tutorial on estimating the precision of individual test scores for anyone constructing and using psychological tests. #emph[Psychometrika], 1–22. #link("https://doi.org/10.1017/psy.2026.10081")[https://doi.org/10.1017/psy.2026.10081]])
   cvitem([2025], [Mulder, J., Pfadt, J. M., & Wagenmakers, E.-J. (2025). A tutorial on Bayesian hypothesis testing of correlation coefficients using the BFpack-module in JASP. #emph[Behavior Research Methods, 57] (11), 311. #link("https://doi.org/10.3758/s13428-025-02846-5")[https://doi.org/10.3758/s13428-025-02846-5]])
   cvitem([2023], [Pfadt, J. M., van den Bergh, D., & Moshagen, M. (2023). Classical and Bayesian uncertainty intervals for the reliability of multidimensional scales. #emph[Structural Equation Modeling: A Multidisciplinary Journal, 30] (3), 349–363. #link("https://doi.org/10.1080/10705511.2022.2124162")[https://doi.org/10.1080/10705511.2022.2124162]])
-  cvitem([], [Pfadt, J. M. (2023), #emph[The present and future of reliability analyis: Advances in theory and practice] (Doctoral dissertation, Ulm University). #link("https://doi.org/10.18725/OPARU-49700")[https://doi.org/10.18725/OPARU-49700]])
+  cvitem([], [Pfadt, J. M. (2023), #emph[The present and future of reliability analysis: Advances in theory and practice] (Doctoral dissertation, Ulm University). #link("https://doi.org/10.18725/OPARU-49700")[https://doi.org/10.18725/OPARU-49700]])
   cvitem([], [Sijtsma, K., & Pfadt, J. M. (2023). Reliability. In R. Tierney, F. Rizvi, & K. Ercikan (Eds.), #emph[International encyclopedia of education] (4th ed., pp. 21-34). Elsevier. #link("https://doi.org/10.1016/B978-0-12-818630-5.10004-1")[https://doi.org/10.1016/B978-0-12-818630-5.10004-1]])
   cvitem([2022], [Pfadt, J. M., van den Bergh, D., Sijtsma, K., Moshagen, M., & Wagenmakers, E.-J. (2022). Bayesian estimation of single-test reliability coefficients. #emph[Multivariate Behavioral Research, 57] (4), 620–641. #link("https://doi.org/10.1080/00273171.2021.1891855")[https://doi.org/10.1080/00273171.2021.1891855]])
   cvitem([], [Pfadt, J. M., van den Bergh, D., Sijtsma, K., & Wagenmakers, E.-J. (2022). A tutorial on Bayesian single-test reliability analysis with JASP. #emph[Behavior Research Methods, 55] (3), 1069–1078. #link("https://doi.org/10.3758/s13428-021-01778-0")[https://doi.org/10.3758/s13428-021-01778-0]])
@@ -240,6 +240,20 @@ I am a researcher in the lab of Eric-Jan Wagenmakers at the University of Amster
 
 // ── Talks ──────────────────────────────────────────────────
 = Talks
+
+#cventry(
+  [Conference],
+  [European Network for Business and Industrial Statistics (ENBIS) Conference 2026],
+  subtitle: ["JASP for Quality Control: An Open-Source Software for Industrial Statistics"],
+  location: [Florence, Italy]
+)
+
+#cventry(
+  [Conference],
+  [International Meeting of the Psychometric Society (IMPS) 2026],
+  subtitle: ["Bayes Factors for Structural Equation Models with blavaan and bridgesampling"],
+  location: [Seoul, South Korea]
+)
 
 #cventry(
   [Conference],

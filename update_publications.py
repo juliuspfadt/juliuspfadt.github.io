@@ -205,7 +205,7 @@ MANUAL_PUBLICATIONS = [
         "include_in_cv": True,
         "html": (
             '<li><strong>Pfadt, J. M.</strong> (2023), <em>The present and future of reliability '
-            'analyis: Advances in theory and practice</em> [Doctoral dissertation, '
+            'analysis: Advances in theory and practice</em> [Doctoral dissertation, '
             'Ulm University]. <a href="https://doi.org/10.18725/OPARU-49700">'
             'http://dx.doi.org/10.18725/OPARU-49700</a></li>'
         ),
@@ -220,7 +220,7 @@ MANUAL_PUBLICATIONS = [
   keywords = {Bayes-Entscheidungstheorie,Bayesian statistical decision theory,Bayesian statistics,DDC 150 / Psychology,DDC 310 / General statistics,Forschungsmethode,Psychological research methods,Psychologie,Psychology; Research; Methodology,Reliability analysis},
   author+an = {1=highlight}
 }""",
-        "typst": '[Pfadt, J. M. (2023), #emph[The present and future of reliability analyis: Advances in theory and practice] (Doctoral dissertation, Ulm University). #link("https://doi.org/10.18725/OPARU-49700")[https://doi.org/10.18725/OPARU-49700]]',
+        "typst": '[Pfadt, J. M. (2023), #emph[The present and future of reliability analysis: Advances in theory and practice] (Doctoral dissertation, Ulm University). #link("https://doi.org/10.18725/OPARU-49700")[https://doi.org/10.18725/OPARU-49700]]',
     },
     {
         "key": "Sijtsma2023Reliability",
